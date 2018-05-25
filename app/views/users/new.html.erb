@@ -1,0 +1,43 @@
+<h2 class="user-title-box">アカウント作成</h2>
+
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2>< %= pluralize(@user.errors.count, "error") %> prohibited this @user from being saved:</h2>
+    <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li>< %= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="well user-new-panel-size">
+  <%= form_with(model: @user, local: true) do |f| %>
+    <table>
+      <tr>
+        <td class="user-new-table-space"><%= f.label :name %></td>
+        <td class="user-new-table-space"><%= f.text_field :name, :placeholder => "Name", :size => "50" %></td>
+      </tr>
+      <tr>
+        <td class="user-new-table-space"><%= f.label :email %></td>
+        <td class="user-new-table-space"><%= f.email_field :email, :placeholder => "Email", :size => "50" %></td>
+      </tr>
+      <tr>
+        <td class="user-new-table-space"><%= f.label :password %></td>
+        <td class="user-new-table-space"><%= f.password_field :password, :placeholder => "Password", :size => "50" %></td>
+      </tr>
+      <tr>
+        <td class="user-new-table-space"><%= f.label :password_confirmation %></td>
+        <td class="user-new-table-space"><%= f.password_field :password_confirmation, :placeholder => "Password", :size => "50" %></td>
+      </tr>
+      <tr>
+        <td class="user-new-table-space"><%= f.label :image %></td>
+        <td class="user-new-table-space"><%= f.file_field :image, :placeholder => "image" %></td>
+        <%= f.hidden_field :image_cache %>
+      </tr>
+      <tr>
+        <td class="user-new-table-space"><%= f.submit "登録する", class: "btn-default" %></td>
+      </tr>
+    </table>
+  <% end %>
+</div>

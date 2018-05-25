@@ -1,0 +1,51 @@
+<h2 class="blog-title-box">日本酒ノート一覧</h2>
+
+<div class="row">
+  <% @sakes.each do |sake| %>
+    <div class="col-lg-4 col-sm-6">
+      <div class="panel panel-info">
+      	<div class="panel-heading">
+          <table>
+            <tr>
+              <td>投稿者：</td>
+              <td><%= User.find(sake.user_id).name %></td>
+            </tr>
+            <tr>
+              <td>日本酒：</td>
+              <td><%= sake.sake %></td>
+            </tr>
+            <tr>
+              <td>蔵元：</td>
+              <td><%= sake.brewery %></td>
+            </tr>
+          </table>
+        </div>
+      	<div class="panel-body">
+          <table>
+            <tr>
+              <td class="sake-index-image-positon">
+                <%= image_tag sake.image %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= sake.comment.truncate(23) %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= link_to '詳細', sake_path(sake.id) %>
+                <% if current_user != nil %>
+                  <% if sake.user_id == current_user.id %>
+                    <%= link_to '編集', edit_sake_path(sake.id) %>
+                    <%= link_to '削除', sake_path(sake.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %>
+                  <% end %>
+                <% end %>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

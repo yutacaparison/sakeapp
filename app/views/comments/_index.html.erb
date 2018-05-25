@@ -1,0 +1,10 @@
+<table>
+  <% comments.each do |comment| %>
+    <% unless comment.id.nil? %>
+      <tr>
+        <td class="comment-comment-area"><%= simple_format(comment.content) %></td>
+      </tr>
+      <tr><td class="comment-comment-space"></td></tr>
+    <% end %>
+  <% end %>
+</table>

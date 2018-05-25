@@ -1,0 +1,62 @@
+<div class="col-lg-6 col-sm-6">
+  <h2 class="user-title-box">プロフィール</h2>
+
+  <table class="user-show-table">
+    <tr>
+      <th class="user-show-th">お名前：</th>
+      <td class="user-show-td"><%= @user.name %></td>
+    </tr>
+    <tr>
+      <th class="user-show-th">メールアドレス：</th>
+      <td class="user-show-td"><%= @user.email %></td>
+    </tr>
+    <tr>
+      <th class="user-show-th">アイコン：</th>
+      <td class="user-show-td"><%= image_tag @user.image %></td>
+    </tr>
+  </table>
+</div>
+
+<div class="col-lg-6 col-sm-6">
+  <h2 class="user-title-box">お気に入り一覧</h2>
+
+  <% @favorites_sakes.each do |favorite| %>
+    <div class="panel panel-info">
+      <div class="panel-heading ">
+        <table>
+          <tr>
+            <td>投稿者：</td>
+            <td><%= User.find(favorite.user_id).name %></td>
+          </tr>
+          <tr>
+            <td>日本酒：</td>
+            <td><%= favorite.sake.sake %></td>
+          </tr>
+          <tr>
+            <td>蔵元：</td>
+            <td><%= favorite.sake.brewery %></td>
+          </tr>
+        </table>
+      </div>
+      <div class="panel-body">
+        <table>
+          <tr>
+            <td class="user-show-image-positon">
+              <%= image_tag favorite.sake.image %>
+            </td>
+          </tr>
+          <tr>
+            <td class="user-show-comment-space">
+              <%= favorite.sake.comment.truncate(23) %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= link_to '詳細', sake_path(favorite.sake.id) %>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  <% end %>
+</div>

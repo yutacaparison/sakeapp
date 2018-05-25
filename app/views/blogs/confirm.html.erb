@@ -1,0 +1,41 @@
+<h2 class="blog-title-box">以下の内容で投稿する</h2>
+
+<%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
+  <%= form.hidden_field :title %>
+  <%= form.hidden_field :content %>
+  <%= form.hidden_field :image %>
+  <%= form.hidden_field :image_cache %>
+
+  <div class="panel panel-info blog-confirm-panel-size">
+    <div class="panel-heading">
+      <table>
+        <tr>
+          <td>タイトル：</td>
+          <td><%= @blog.title %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="panel-body">
+      <table>
+        <tr>
+          <td>本文：</td>
+          <td><%= simple_format(@blog.content) %></td>
+        </tr>
+        <tr>
+          <td>画像：</td>
+          <td class="blog-confirm-image-position"><%= image_tag @blog.image %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <%= form.submit "投稿する" %>
+<% end %>
+
+<%= form_with(model: @blog, url: new_blog_path, local: true, method: 'get') do |form| %>
+  <%= form.hidden_field :title %>
+  <%= form.hidden_field :content %>
+  <%= form.hidden_field :image %>
+  <%= form.hidden_field :image_cache %>
+  <br>
+  <%= form.submit "もどる", name: 'back' %>
+<% end %>

@@ -1,0 +1,36 @@
+<h2 class="blog-title-box">ブログ一覧</h2>
+
+<% @blogs.each do |blog| %>
+  <div class="panel panel-info blog-index-panel-size">
+    <div class="panel-heading ">
+      <table>
+        <tr>
+          <td>タイトル：</td>
+          <td><%= blog.title %></td>
+        </tr>
+        <tr>
+          <td>投稿者：</td>
+          <td><%= User.find(blog.user_id).name %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="panel-body">
+      <table>
+        <tr>
+          <td class="blog-index-content-area"><%= blog.content.truncate(143) %></td>
+        </tr>
+        <tr>
+          <td class="blog-index-menu-space">
+            <%= link_to '詳細', blog_path(blog.id) %>
+            <% if current_user != nil %>
+              <% if blog.user_id == current_user.id %>
+                <%= link_to '編集', edit_blog_path(blog.id) %>
+                <%= link_to '削除', blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %>
+              <% end %>
+            <% end %>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+<% end %>

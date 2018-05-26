@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :current_user?, only: [:show]
+
   def new
     @user = User.new
   end
@@ -19,8 +21,16 @@ class UsersController < ApplicationController
   end
 
   private
+
   def user_params
     params.require(:user).permit(:name, :email, :password,
                                  :password_confirmation, :image)
   end
+
+  def current_user?
+    if User.find(params[:id]) != User.find_by(id: session[:user_id])
+      redirect_to sakes_path, notice: "権限がありません。"
+    end
+  end
+
 end

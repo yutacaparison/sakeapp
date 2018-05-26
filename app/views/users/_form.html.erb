@@ -1,0 +1,41 @@
+<%= form_with(model: @user, local: true) do |form| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @user.errors.count %>件のエラーがあります。</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="well user-new-panel-size">
+    <table>
+      <tr>
+        <td class="user-new-table-space"><%= form.label :name %></td>
+        <td class="user-new-table-space"><%= form.text_field :name, :placeholder => "Name", :size => "50" %></td>
+      </tr>
+      <tr>
+        <td class="user-new-table-space"><%= form.label :email %></td>
+        <td class="user-new-table-space"><%= form.email_field :email, :placeholder => "Email", :size => "50" %></td>
+      </tr>
+      <tr>
+        <td class="user-new-table-space"><%= form.label :password %></td>
+        <td class="user-new-table-space"><%= form.password_field :password, :placeholder => "Password", :size => "50" %></td>
+      </tr>
+      <tr>
+        <td class="user-new-table-space"><%= form.label :password_confirmation %></td>
+        <td class="user-new-table-space"><%= form.password_field :password_confirmation, :placeholder => "Password", :size => "50" %></td>
+      </tr>
+      <tr>
+        <td class="user-new-table-space"><%= form.label :image %></td>
+        <td class="user-new-table-space"><%= form.file_field :image, :placeholder => "image" %></td>
+        <%= form.hidden_field :image_cache %>
+      </tr>
+      <tr>
+        <td class="user-new-table-space"><%= form.submit "登録する", class: "btn-default" %></td>
+      </tr>
+    </table>
+  </div>
+<% end %>

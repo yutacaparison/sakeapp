@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :current_user?, only: [:show]
+  before_action :current_user?, only: [:show, :edit]
 
   def new
     @user = User.new
@@ -19,6 +19,21 @@ class UsersController < ApplicationController
     @favorite = current_user.favorites.find_by(sake_id: @sake)
     @favorites_sakes = current_user.favorites
   end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to user_path, notice: "ブログを編集しました。"
+    else
+      render 'edit'
+    end
+  end
+
+
 
   private
 

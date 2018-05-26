@@ -30,6 +30,6 @@ ja:
         comment: "コメント"
       comment:
         content: "内容"
-      session:
-        email: "メールアドレス"
-        password: "パスワード"
+  session:
+    email: "メールアドレス"
+    password: "パスワード"

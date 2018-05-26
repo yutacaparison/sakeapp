@@ -4,11 +4,11 @@
   <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
     <table>
       <tr>
-        <td class="session-new-table-space"><%= f.label :email %></td>
+        <td class="session-new-table-space"><%= f.label t("session.email") %></td>
         <td class="session-new-table-space session-new-label-space"><%= f.email_field :email, :placeholder => "Email", :size => "50" %></td>
       </tr>
       <tr>
-        <td class="session-new-table-space session-new-label-space"><%= f.label :password %></td>
+        <td class="session-new-table-space session-new-label-space"><%= f.label t("session.password") %></td>
         <td class="session-new-table-space"><%= f.password_field :password, :placeholder => "Password", :size => "50" %></td>
       </tr>
       <tr>

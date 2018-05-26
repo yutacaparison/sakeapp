@@ -3,10 +3,14 @@ ja:
     models:
       blog: "ブログ"
       user: "ユーザー"
+      sake: "日本酒"
+      comment: "コメント"
     attributes:
       blog:
         title: "タイトル"
         content: "内容"
+        comment: "コメント"
+        image: "画像"
       user:
         title: "タイトル"
         name: "名前"
@@ -14,4 +18,14 @@ ja:
         current_password: "現在のパスワード"
         password: "パスワード"
         password_confirmation: "確認用パスワード"
+        password_digest: "確認用パスワード"
         remember_me: "ログインを記憶"
+        image: "アイコン"
+      sake:
+        sake: "日本酒"
+        brewery: "蔵元"
+        prefectures: "都道府県"
+        image: "画像"
+        comment: "コメント"
+      comment:
+        content: "内容"

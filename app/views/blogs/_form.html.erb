@@ -10,11 +10,11 @@
     </div>
   <% end %>
 
-  <p><%= form.label :title %></p>
+  <p><%= form.label "タイトル" %></p>
   <p><%= form.text_field :title, :size => "60", :placeholder => "タイトル" %></p>
-  <p><%= form.label :content %></p>
+  <p><%= form.label "記事" %></p>
   <p><%= form.text_area :content, :size => "97x10", :placeholder => "記事" %></p>
-  <p><%= form.label :image %></p>
+  <p><%= form.label "画像" %></p>
   <p><%= form.file_field :image, :placeholder => "画像" %></p>
   <%= form.hidden_field :image_cache %>
   <br>

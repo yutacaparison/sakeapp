@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
   def create
     @blog = Blog.find(params[:blog_id])
     @comment = @blog.comments.build(comment_params)
+    @comment.name = current_user.name
 
     respond_to do |format|
       if @comment.save
@@ -16,7 +17,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:blog_id, :content)
+    params.require(:comment).permit(:blog_id, :name, :content)
   end
 
 end

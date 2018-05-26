@@ -1,10 +1,17 @@
-<table>
-  <% comments.each do |comment| %>
-    <% unless comment.id.nil? %>
-      <tr>
-        <td class="comment-comment-area well"><%= simple_format(comment.content) %></td>
-      </tr>
-      <tr><td class="comment-comment-space"></td></tr>
-    <% end %>
+<% comments.each do |comment| %>
+  <% unless comment.id.nil? %>
+    <div class="well comment-comment-table-area">
+      <table>
+        <tr>
+          <td calss="comment-comment-name">投稿者：<%= comment.name %></td>
+        </tr>
+        <tr>
+          <td class="comment-comment-area"><%= simple_format(comment.content) %></td>
+        </tr>
+        <tr>
+          <td class="comment-comment-space"></td>
+        </tr>
+      </table>
+    </div>
   <% end %>
-</table>
+<% end %>

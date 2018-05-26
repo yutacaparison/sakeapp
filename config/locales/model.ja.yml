@@ -5,6 +5,7 @@ ja:
       user: "ユーザー"
       sake: "日本酒"
       comment: "コメント"
+      session: "セッション"
     attributes:
       blog:
         title: "タイトル"
@@ -29,3 +30,6 @@ ja:
         comment: "コメント"
       comment:
         content: "内容"
+      session:
+        email: "メールアドレス"
+        password: "パスワード"

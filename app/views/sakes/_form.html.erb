@@ -10,16 +10,16 @@
     </div>
   <% end %>
 
-  <p><%= form.label "日本酒" %></p>
+  <p><%= form.label :sake %></p>
   <p><%= form.text_field :sake, :size => "50", :placeholder => "日本酒" %></p>
-  <p><%= form.label "蔵元" %></p>
+  <p><%= form.label :brewery %></p>
   <p><%= form.text_field :brewery, :size => "50", :placeholder => "蔵元" %></p>
-  <p><%= form.label "都道府県" %></p>
+  <p><%= form.label :prefectures %></p>
   <p><%= form.select(:prefectures, Sake::SELECT_OPTIONS, selected: @sake.prefectures) %></p>
-  <p><%= form.label "画像" %></p>
+  <p><%= form.label :image %></p>
   <p><%= form.file_field :image, :placeholder => "画像" %></p>
   <%= form.hidden_field :image_cache %>
-  <p><%= form.label "コメント" %></p>
+  <p><%= form.label :comment %></p>
   <p><%= form.text_area :comment, :size => "50x5", :placeholder => "コメント" %></p>
   <br>
   <p><%= form.submit "投稿する" %></p>

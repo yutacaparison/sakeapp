@@ -3,7 +3,7 @@ Sake app
 https://sakeapp.herokuapp.com/
 
 ## Description
-最近飲んだ日本酒の投稿と、日本酒について語るブログを書くサイトです。
+最近飲んだ日本酒の投稿と、日本酒について語るブログを書けるサイトです。
 
 ## Requirement
 - ruby 2.3.0

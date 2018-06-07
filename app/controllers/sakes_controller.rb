@@ -23,7 +23,7 @@ class SakesController < ApplicationController
     @sake = Sake.new(sake_params)
     @sake.user_id = current_user.id
     if @sake.save
-      redirect_to sakes_path, notice: "ブログを作成しました。"
+      redirect_to sakes_path, notice: "日本酒ノートを投稿しました。"
     else
       render 'new'
     end
@@ -37,7 +37,7 @@ class SakesController < ApplicationController
   def update
     @sake = Sake.find(params[:id])
     if @sake.update(sake_params)
-      redirect_to sakes_path, notice: "ブログを編集しました。"
+      redirect_to sakes_path, notice: "日本酒ノートを編集しました。"
     else
       render 'edit'
     end
@@ -45,7 +45,7 @@ class SakesController < ApplicationController
 
   def destroy
     @sake.destroy
-    redirect_to sakes_path, notice: "ブログを削除しました。"
+    redirect_to sakes_path, notice: "日本酒ノートを削除しました。"
   end
 
   def confirm

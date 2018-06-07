@@ -1,5 +1,10 @@
 <h2 class="blog-title-box">ブログ一覧</h2>
 
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+  <br>
+<% end %>
+
 <% @blogs.each do |blog| %>
   <div class="panel panel-info blog-index-panel-size">
     <div class="panel-heading ">

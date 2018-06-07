@@ -1,24 +1,45 @@
-# README
+Sake app
+====
+https://sakeapp.herokuapp.com/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
+最近飲んだ日本酒の投稿と、日本酒について語るブログを書けるサイトです。
 
-Things you may want to cover:
+## Requirement
+- ruby 2.3.0
+- Rails 5.1.6
+- PostgreSQL 10.4
+- Bootstrap 3
 
-* Ruby version
+## Function
+- 日本酒投稿機能
+- ブログ投稿機能
 
-* System dependencies
+## Usage
+このアプリケーションを動かす場合は、まずはリポジトリを手元にクローンしてください。
 
-* Configuration
+```
+$ git clone git@github.com:yutacaparison/sakeapp.git
+```
 
-* Database creation
+次に、以下のコマンドで必要になる Ruby Gems をインストールします。
 
-* Database initialization
+```
+$ bundle install
+```
 
-* How to run the test suite
+その後、データベースへのマイグレーションを実行します。
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+$ rails db:migrate
+```
 
-* Deployment instructions
+これで、Railsサーバーを立ち上げる準備が整っているはずです。
 
-* ...
+```
+$ rails server
+```
+
+## Author
+
+[yutacaparison](https://github.com/yutacaparison)

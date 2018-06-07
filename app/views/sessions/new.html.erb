@@ -1,5 +1,11 @@
 <h2 class="user-title-box">ログイン</h2>
 
+<% if flash[:notice] || flash[:danger] %>
+    <p><%= flash[:notice] %></p>
+    <p><%= flash[:danger] %></p>
+  <br>
+<% end %>
+
 <div class="well session-new-panel-size">
   <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
     <table>

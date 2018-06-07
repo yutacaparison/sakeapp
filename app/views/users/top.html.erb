@@ -1,4 +1,9 @@
-<div class="jumbotron">
-</div>
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
 
-<script>$(".jumbotron").css('display', 'none').fadeIn(5000);</script>
+<div class="jumbotron">
+
+  <script>$(".jumbotron").css('display', 'none').fadeIn(5000);</script>
+
+</div>

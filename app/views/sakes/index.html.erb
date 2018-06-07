@@ -1,5 +1,10 @@
 <h2 class="blog-title-box">日本酒ノート一覧</h2>
 
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+  <br>
+<% end %>
+
 <div class="row">
   <% @sakes.each do |sake| %>
     <div class="col-lg-4 col-sm-6">

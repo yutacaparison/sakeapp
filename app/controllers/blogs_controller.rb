@@ -25,7 +25,7 @@ class BlogsController < ApplicationController
     if @blog.save
       redirect_to blogs_path, notice: "ブログを作成しました。"
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -39,7 +39,7 @@ class BlogsController < ApplicationController
     if @blog.update(blog_params)
       redirect_to blogs_path, notice: "ブログを編集しました。"
     else
-      render 'edit'
+      render :edit
     end
   end
 

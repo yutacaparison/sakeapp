@@ -25,7 +25,7 @@ class SakesController < ApplicationController
     if @sake.save
       redirect_to sakes_path, notice: "日本酒ノートを投稿しました。"
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -39,7 +39,7 @@ class SakesController < ApplicationController
     if @sake.update(sake_params)
       redirect_to sakes_path, notice: "日本酒ノートを編集しました。"
     else
-      render 'edit'
+      render :edit
     end
   end
 

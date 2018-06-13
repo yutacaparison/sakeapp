@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to new_session_path
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to user_path, notice: "ブログを編集しました。"
     else
-      render 'edit'
+      render :edit
     end
   end
 

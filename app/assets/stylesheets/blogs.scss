@@ -31,6 +31,10 @@
   width: 700px;
 }
 
+.blog-confirm-border {
+  border-top: 1px #bce8f1 solid;
+}
+
 // show ---------------------------------------------------
 
 .blog-show-panel-size {
@@ -42,20 +46,16 @@
   padding-top: 10px;
 }
 
-.blog-show-content-area {
-  height: 60px;
-  vertical-align: top;
-}
+// .blog-show-content-area {
+//   height: 60px;
+//   vertical-align: top;
+// }
 
 .blog-show-image-positon {
   text-align: center;
   vertical-align: middle;
   width: 700px;
   height: 250px;
-}
-
-.blog-show-comment-space {
-  padding-top: 10px;
 }
 
 .blog-show-border {

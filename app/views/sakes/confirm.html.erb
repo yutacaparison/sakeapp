@@ -1,12 +1,12 @@
 <h2 class="sake-title-box">以下の内容で投稿する</h2>
 
 <%= form_with(model: @sake, url: sakes_path, local: true) do |form| %>
-  <%= form.hidden_field :sake %>
+  <%= form.hidden_field :name %>
   <%= form.hidden_field :brewery %>
   <%= form.hidden_field :prefectures %>
   <%= form.hidden_field :image %>
   <%= form.hidden_field :image_cache %>
-  <%= form.hidden_field :comment %>
+  <%= form.hidden_field :description %>
 
   <div class="panel panel-info sake-confirm-panel-size">
     <div class="panel-heading ">
@@ -17,7 +17,7 @@
         </tr>
         <tr>
           <td>日本酒：</td>
-          <td><%= @sake.sake %></td>
+          <td><%= @sake.name %></td>
         </tr>
         <tr>
           <td>蔵元：</td>
@@ -35,10 +35,10 @@
           <td class="sake-confirm-image-position"><%= image_tag @sake.image %></td>
         </tr>
         <tr>
-          <td class="sake-confirm-comment-space">コメント：</td>
+          <td class="sake-confirm-description-space">コメント：</td>
         </tr>
         <tr>
-          <td class="sake-confirm-comment-space"><%= simple_format(@sake.comment) %></td>
+          <td class="sake-confirm-description-space"><%= simple_format(@sake.description) %></td>
         </tr>
       </table>
     </div>
@@ -47,12 +47,12 @@
 <% end %>
 
 <%= form_with(model: @sake, url: new_sake_path, local: true, method: 'get') do |form| %>
-  <%= form.hidden_field :sake %>
+  <%= form.hidden_field :name %>
   <%= form.hidden_field :brewery %>
   <%= form.hidden_field :prefectures %>
   <%= form.hidden_field :image %>
   <%= form.hidden_field :image_cache %>
-  <%= form.hidden_field :comment %>
+  <%= form.hidden_field :description %>
   <br>
   <%= form.submit "もどる", name: 'back' %>
 <% end %>

@@ -8,7 +8,7 @@
       </tr>
       <tr>
         <td>日本酒：</td>
-        <td class="sake-show-table-space"><%= @sake.sake %></td>
+        <td class="sake-show-table-space"><%= @sake.name %></td>
       </tr>
       <tr>
         <td>蔵元：</td>
@@ -26,10 +26,10 @@
         <td class="sake-show-image-positon"><%= image_tag @sake.image %></td>
       </tr>
       <tr>
-        <td class="sake-show-comment-space">コメント：</td>
+        <td class="sake-show-description-space">コメント：</td>
       </tr>
       <tr>
-        <td class="sake-show-comment-space"><%= simple_format(@sake.comment) %></td>
+        <td class="sake-show-description-space"><%= simple_format(@sake.description) %></td>
       </tr>
     </table>
   </div>

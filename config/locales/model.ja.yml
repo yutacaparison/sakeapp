@@ -23,11 +23,11 @@ ja:
         remember_me: "ログインを記憶"
         image: "アイコン"
       sake:
-        sake: "日本酒"
+        name: "日本酒"
         brewery: "蔵元"
         prefectures: "都道府県"
         image: "画像"
-        comment: "コメント"
+        description: "コメント"
       comment:
         content: "内容"
   session:

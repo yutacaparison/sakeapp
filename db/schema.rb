@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 20180520103015) do
   enable_extension "plpgsql"
 
   create_table "blogs", force: :cascade do |t|
-    t.string "title"
-    t.text "content"
+    t.string "title", null: false
+    t.text "content", null: false
     t.text "image"
     t.integer "user_id"
     t.datetime "created_at", null: false
@@ -25,27 +25,27 @@ ActiveRecord::Schema.define(version: 20180520103015) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.bigint "blog_id"
-    t.string "name"
-    t.text "content"
+    t.bigint "blog_id", null: false
+    t.string "name", null: false
+    t.text "content", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["blog_id"], name: "index_comments_on_blog_id"
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "sake_id"
+    t.integer "user_id", null: false
+    t.integer "sake_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "sakes", force: :cascade do |t|
-    t.string "sake", null: false
+    t.string "name", null: false
     t.string "brewery"
     t.string "prefectures", null: false
     t.text "image"
-    t.text "comment", null: false
+    t.text "description", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

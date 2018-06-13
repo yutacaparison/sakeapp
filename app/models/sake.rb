@@ -6,9 +6,9 @@ class Sake < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  validates :sake, presence: true, length: { maximum: 19 }
+  validates :name, presence: true, length: { maximum: 19 }
   validates :brewery, length: { maximum: 19 }
-  validates :comment, presence: true
+  validates :description, presence: true
 
   SELECT_OPTIONS = [
     ['北海道',   '北海道'],

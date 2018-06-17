@@ -22,6 +22,7 @@
           <div id="gnavi" class="collapse navbar-collapse">
             <% if logged_in? %>
               <ul class="nav navbar-nav navbar-right">
+                <li><%= link_to 'アプリについて', about_path %></li>
                 <li><%= link_to '日本酒ノートを投稿する', new_sake_path %></li>
                 <li><%= link_to 'ブログを投稿する', new_blog_path %></li>
                 <li><%= link_to '日本酒ノート一覧', sakes_path %></li>
@@ -31,6 +32,7 @@
               </ul>
             <% else %>
               <ul class="nav navbar-nav navbar-right">
+                <li><%= link_to 'アプリについて', about_path %></li>
                 <li><%= link_to '日本酒ノート一覧', sakes_path %></li>
                 <li><%= link_to 'ブログ一覧', blogs_path %></li>
                 <li><%= link_to "アカウント作成", new_user_path %></li>

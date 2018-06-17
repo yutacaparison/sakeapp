@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root to: 'users#top'
 
+  get 'about', to: 'users#about'
+
   resources :blogs
 
   resources :blogs do

@@ -6,7 +6,7 @@ class Sake < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  validates :name, presence: true, length: { maximum: 19 }
+  validates :name, presence: true
   validates :brewery, length: { maximum: 19 }
   validates :description, presence: true
 
